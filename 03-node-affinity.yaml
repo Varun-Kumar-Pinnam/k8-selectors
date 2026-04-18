@@ -18,11 +18,39 @@ spec:
             values:
             - us-east-1f
             - us-east-1b
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 10
-        preference:
-          matchExpressions:
           - key: project
             operator: In
             values:
-            - roboshopp
+            - roboshop            
+
+
+
+
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: nginx-affinity
+#   labels:
+#     project: roboshop
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+#   affinity:
+#     nodeAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#         nodeSelectorTerms:
+#         - matchExpressions:
+#           - key: topology.kubernetes.io/zone
+#             operator: In
+#             values:
+#             - us-east-1f
+#             - us-east-1b
+#       preferredDuringSchedulingIgnoredDuringExecution:
+#       - weight: 10
+#         preference:
+#           matchExpressions:
+#           - key: project
+#             operator: In
+#             values:
+#             - roboshopp
