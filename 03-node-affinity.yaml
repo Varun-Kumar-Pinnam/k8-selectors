@@ -14,14 +14,15 @@ spec:
         nodeSelectorTerms:
         - matchExpressions:
           - key: topology.kubernetes.io/zone
-            operator: NotIn
+            operator: In
             values:
             - us-east-1f
+            - us-east-1b
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 10
         preference:
           matchExpressions:
-          - key: tproject
+          - key: project
             operator: In
             values:
-            - roboshop
+            - roboshopp
