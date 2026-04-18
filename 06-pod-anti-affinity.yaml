@@ -27,7 +27,7 @@ spec:
           labelSelector:
             matchExpressions:
             - key: tier
-              operator: NotIn
+              operator: In
               values:
               - backend
           topologyKey: topology.kubernetes.io/zone
