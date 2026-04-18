@@ -8,5 +8,24 @@ spec:
   containers:
   - name: nginx
     image: nginx
-  nodeSelector:
-    project: roboshop
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod2
+  labels:
+    tier: backend
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: tier
+            operator: In
+            values:
+            - backend
+        topologyKey: topology.kubernetes.io/zone
