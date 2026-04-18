@@ -25,5 +25,5 @@ spec:
   tolerations:
   - key: "hardware"
     operator: "Equal"
-    value: "gpu"
+    value: "gpuu"
     effect: "NoSchedule"
