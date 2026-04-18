@@ -21,7 +21,7 @@ spec:
           - key: project
             operator: In
             values:
-            - roboshop            
+            - roboshopp       
 
 
 
@@ -53,4 +53,4 @@ spec:
 #           - key: project
 #             operator: In
 #             values:
-#             - roboshopp
+#             - roboshop
